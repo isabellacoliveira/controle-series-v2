@@ -22,11 +22,11 @@ class SeriesController extends Controller
 
     public function store(Request $request)
     {
-        $nomeSerie = $request->input('nome');
-        $serie = new Serie();
-        $serie->nome = $nomeSerie;
-        $serie->save();
+        // Serie::create($request->only(['nome'])); o que ele busca
+        // Serie::create($request->except(['nome']));
+        Serie::create($request->all());
 
+        // Serie::create(['nome' => 'Teste']); adiciona no banco na tabela 'nome' a propriedade 'Teste'
         return redirect('/series');
     }
 }
