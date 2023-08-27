@@ -9,5 +9,5 @@ class Serie extends Model
 {
     use HasFactory;
     // precisamos informar quais campos vamos permitir a atribuição em massa
-    protected $fillabe = ['nome'];
+    protected $fillable = ['nome'];
 }

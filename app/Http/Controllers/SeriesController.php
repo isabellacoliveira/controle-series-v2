@@ -24,9 +24,10 @@ class SeriesController extends Controller
     {
         // Serie::create($request->only(['nome'])); o que ele busca
         // Serie::create($request->except(['nome']));
+        // atribuição de dados em massa
         Serie::create($request->all());
 
         // Serie::create(['nome' => 'Teste']); adiciona no banco na tabela 'nome' a propriedade 'Teste'
-        return redirect('/series');
+        return redirect()->route('series.index');
     }
 }
