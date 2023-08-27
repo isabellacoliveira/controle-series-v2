@@ -7,6 +7,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/series', SeriesController::class);
-
+Route::resource('/series', SeriesController::class)
+// temos todas as rotas definidas com exceção da show
+    ->except(['show']);
 
